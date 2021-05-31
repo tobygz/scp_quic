@@ -1,5 +1,5 @@
 # scp_quic
-scp with quic-go , pure pure
+scp with quic-go , pure pure, you can benefit at least double the bandwidth of tcp
 
 
 server:
