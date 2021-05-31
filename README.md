@@ -4,7 +4,7 @@ scp with quic-go , pure pure
 
 server:
 
-./scp_quic_linux -s -p /home/yuandan/quic-go/quic-go/example/scp/remote/
+./scp_quic_linux -s -p /home/yuandan/quic-go/quic-go/example/scp/remote/ -a "192.168.1.1:4200"
 
 
 client with file list:
