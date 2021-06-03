@@ -46,8 +46,8 @@ func main() {
 	parentAddr := flag.String("p", "/home/devops/upgrade_stats/quic_upload/", "point to the dest path")
 	abpath := flag.Bool("d", false, "use abstract path when true; other use relative path")
 	// for cli mode
-	filename := flag.String("f", "filename", "./vos_web.exe")
-	filelist := flag.String("flist", "filename", "")
+	filename := flag.String("f", "vos_web.exe", "filename")
+	filelist := flag.String("flist", "", "filelist")
 
 	flag.Parse()
 	fmt.Printf("bserv: %v caddr: %v, parentaddr: %v abpath: %v filename: %v\n",
@@ -130,7 +130,7 @@ func echoServer(caddr, fulldir string) error {
 					os.MkdirAll(dir, os.ModePerm)
 				}
 
-				file, ee := os.OpenFile(fullurl, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0600)
+				file, ee := os.OpenFile(fullurl, os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0600)
 				if ee != nil {
 					panic(ee)
 				}
